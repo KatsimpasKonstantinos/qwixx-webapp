@@ -2,19 +2,19 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    padding: 20px;
+    width: 100vw;
 }
 
 .Board {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 100%;
+    flex: 70;
 }
 
-.leaderboard {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
+.game-leaderboard {
+    flex: 30;
+    overflow-y: auto;
+    max-height: 90vh;
+    padding: 1em;
 }

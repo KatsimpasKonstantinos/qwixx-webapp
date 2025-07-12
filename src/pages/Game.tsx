@@ -4,6 +4,7 @@ import { createDefaultPaper } from '../game/create-papers/default'
 import { gameBaseModes } from '../game/game-base-modes'
 import type { GameSettings } from '../types/game'
 import type { Player } from '../types/player'
+import Leaderboard from '../components/Leaderboard'
 
 function Game() {
 
@@ -40,13 +41,17 @@ function Game() {
     return (
         <div className="Game">
             <div className='Board'>
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
                 <PlayerPaper player={randomPlayer()} gameSettings={testGameSettings} self={true} />
-
             </div>
-            <div className='leaderboard'>
-                <PlayerPaper player={randomPlayer()} gameSettings={testGameSettings} self={false} />
-                <PlayerPaper player={randomPlayer()} gameSettings={testGameSettings} self={false} />
-                <PlayerPaper player={randomPlayer()} gameSettings={testGameSettings} self={false} />
+            <div className='game-leaderboard'>
+                <Leaderboard players={[randomPlayer(), randomPlayer(), randomPlayer(), randomPlayer(), randomPlayer(), randomPlayer(), randomPlayer()]} gameSettings={testGameSettings} />
             </div>
         </div>
     )
