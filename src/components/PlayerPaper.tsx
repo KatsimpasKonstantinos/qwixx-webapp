@@ -80,17 +80,19 @@ function PlayerPaper({ player, gameSettings, self }: { player: Player, gameSetti
     }
 
     return (
-        <div className={`player-paper player-paper-${self ? "self" : "enemy"}`}>
-            <span className="player-paper-player-name">{player.name}</span>
-            <div className="player-paper-rows">
-                {renderRows()}
-            </div>
-            <div className="player-paper-score-miss-container">
-                <div className="player-paper-score">
-                    {renderScore()}
+        <div className={"paper-container"}>
+            <div className={`player-paper player-paper-${self ? "self" : "enemy"}`}>
+                <span className="player-paper-player-name">{player.name}</span>
+                <div className="player-paper-rows">
+                    {renderRows()}
                 </div>
-                <div className="player-paper-misses">
-                    {renderMisses()}
+                <div className="player-paper-score-miss-container">
+                    <div className="player-paper-score">
+                        {renderScore()}
+                    </div>
+                    <div className="player-paper-misses">
+                        {renderMisses()}
+                    </div>
                 </div>
             </div>
         </div>

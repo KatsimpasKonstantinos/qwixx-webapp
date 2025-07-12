@@ -1,31 +1,43 @@
+.paper-container {
+    perspective: 1000px;
+}
+
+/* Style for the paper */
 .player-paper {
-    border-radius: 0.5em;
-    border: 1px solid #d1d5db;
-    padding: 0.5em;
+    border-radius: 1em;
+    border: 0.1em solid #d1d5db;
+    padding: 1em;
     display: flex;
     flex-direction: column;
-    pointer-events: none;
-
 }
 
 .player-paper-self {
-    font-size: 1.5em;
+    font-size: 1.25rem;
 }
 
 .player-paper-enemy {
-    font-size: 0.6em;
+    font-size: 0.5rem;
+    transform-style: preserve-3d;
 }
 
+
+.player-paper-enemy:hover {
+    transform: rotateY(25deg) rotateX(10deg);
+}
+
+
+
+
 .player-paper-player-name {
-    font-size: 1.5em;
+    font-size: 2em;
     font-weight: 600;
     display: block;
     margin-bottom: 0.5em;
 }
 
 .player-paper-rows {
-    border: 1px solid #d1d5db;
-    border-radius: 0.5em;
+    border: 0.1em solid #d1d5db;
+    border-radius: 1em;
     overflow: hidden;
 }
 
@@ -37,12 +49,12 @@
 }
 
 .player-paper-cell {
-    width: 2.5em;
-    height: 2.5em;
+    width: 2em;
+    height: 2em;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.5em;
+    font-size: 2em;
     font-weight: bold;
     color: white;
     position: relative;
@@ -94,41 +106,41 @@
 }
 
 .player-paper-border-red {
-    border: 1px solid #ef4444;
+    border: 0.1em solid #ef4444;
 }
 
 .player-paper-border-yellow {
-    border: 1px solid #eab308;
+    border: 0.1em solid #eab308;
 }
 
 .player-paper-border-green {
-    border: 1px solid #22c55e;
+    border: 0.1em solid #22c55e;
 }
 
 .player-paper-border-blue {
-    border: 1px solid #3b82f6;
+    border: 0.1em solid #3b82f6;
 }
 
 .player-paper-border-miss {
-    border: 1px solid #0c0c0c;
+    border: 0.1em solid #0c0c0c;
 }
 
 .player-paper-border-score {
-    border: 1px solid #d1d5db;
+    border: 0.1em solid #d1d5db;
 }
 
 .player-paper-score-miss-container {
     display: flex;
     justify-content: space-between;
+
+    padding-top: 1em;
 }
 
 .player-paper-misses {
     display: flex;
     align-items: center;
-    font-size: 1.5em;
     font-weight: bold;
     color: white;
-    padding-top: 0.5em;
 }
 
 .player-paper-miss-cell {
@@ -137,21 +149,20 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1em;
+    font-size: 2em;
     font-weight: bold;
     color: white;
     position: relative;
     border-radius: 0.5em;
-    margin-left: 0.5em;
+    margin-left: 0.2em;
 }
 
 .player-paper-score {
     display: flex;
     align-items: center;
-    font-size: 1.5em;
     font-weight: bold;
+    font-size: 2em;
     color: white;
-    padding-top: 0.5em;
 }
 
 .player-paper-score-cell {
