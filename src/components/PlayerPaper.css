@@ -1,0 +1,170 @@
+.player-paper {
+    border-radius: 0.5em;
+    border: 1px solid #d1d5db;
+    padding: 0.5em;
+    display: flex;
+    flex-direction: column;
+}
+
+.player-paper-self {
+    font-size: 1.5em;
+}
+
+.player-paper-enemy {
+    font-size: 0.6em;
+}
+
+.player-paper-player-name {
+    font-size: 1.125em;
+    font-weight: 600;
+    display: block;
+    margin-bottom: 0.5em;
+}
+
+.player-paper-rows {
+    border: 1px solid #d1d5db;
+    border-radius: 0.5em;
+    overflow: hidden;
+}
+
+.player-paper-row {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    justify-content: space-between;
+}
+
+.player-paper-cell {
+    width: 2.5em;
+    height: 2.5em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5em;
+    font-weight: bold;
+    color: white;
+    position: relative;
+}
+
+.player-paper-cell:hover {
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.1) !important;
+}
+
+.player-paper-cell-cross {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: black;
+    font-size: 3em;
+    font-weight: normal;
+    top: -0.3em;
+}
+
+.player-paper-bg-red {
+    background-color: #ef4444;
+}
+
+.player-paper-bg-yellow {
+    background-color: #eab308;
+}
+
+.player-paper-bg-green {
+    background-color: #22c55e;
+}
+
+.player-paper-bg-blue {
+    background-color: #3b82f6;
+}
+
+.player-paper-bg-red-lock {
+    background-color: #b91c1c;
+}
+
+.player-paper-bg-yellow-lock {
+    background-color: #a16207;
+}
+
+.player-paper-bg-green-lock {
+    background-color: #15803d;
+}
+
+.player-paper-bg-blue-lock {
+    background-color: #1e40af;
+}
+
+.player-paper-border-red {
+    border: 1px solid #ef4444;
+}
+
+.player-paper-border-yellow {
+    border: 1px solid #eab308;
+}
+
+.player-paper-border-green {
+    border: 1px solid #22c55e;
+}
+
+.player-paper-border-blue {
+    border: 1px solid #3b82f6;
+}
+
+.player-paper-border-miss {
+    border: 1px solid #0c0c0c;
+}
+
+.player-paper-border-score {
+    border: 1px solid #d1d5db;
+}
+
+.player-paper-score-miss-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.player-paper-misses {
+    display: flex;
+    align-items: center;
+    font-size: 1.5em;
+    font-weight: bold;
+    color: white;
+    padding-top: 0.5em;
+}
+
+.player-paper-miss-cell {
+    width: 2em;
+    height: 2em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1em;
+    font-weight: bold;
+    color: white;
+    position: relative;
+    border-radius: 0.5em;
+    margin-left: 0.5em;
+}
+
+.player-paper-score {
+    display: flex;
+    align-items: center;
+    font-size: 1.5em;
+    font-weight: bold;
+    color: white;
+    padding-top: 0.5em;
+}
+
+.player-paper-score-cell {
+    width: 2em;
+    height: 2em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1em;
+    font-weight: bold;
+    color: white;
+    position: relative;
+    border-radius: 0.5em;
+}
