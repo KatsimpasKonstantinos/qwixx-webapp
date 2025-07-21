@@ -40,14 +40,10 @@ function Game() {
 
     return (
         <div className="Game">
-            <div className='Board'>
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
+            <div className='game-scorer-rules'>
+
+            </div>
+            <div className='game-board'>
                 <PlayerPaper player={randomPlayer()} gameSettings={testGameSettings} self={true} />
             </div>
             <div className='game-leaderboard'>

@@ -11,7 +11,7 @@ function PlayerPaper({ player, gameSettings, self }: { player: Player, gameSetti
                 {row.cells.map((cell, cellIndex) => (
                     <span
                         key={cellIndex}
-                        className={`player-paper-cell player-paper-bg-${cell.canLockRow ? cell.color + "-lock" : cell.color}`}
+                        className={`player-paper-cell player-paper-bg-${cell.canLockRow ? cell.color + "-canlock" : cell.color}`}
                     >
                         {cell.number}
                         {cell.crossed && (
@@ -19,6 +19,9 @@ function PlayerPaper({ player, gameSettings, self }: { player: Player, gameSetti
                         )}
                     </span>
                 ))}
+                <span className={`player-paper-cell player-paper-bg-${row.color}`}>
+                    {row.lockTicked ? "X" : "0"}
+                </span>
             </div>
         ));
     }

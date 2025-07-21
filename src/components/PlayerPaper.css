@@ -5,25 +5,63 @@
 /* Style for the paper */
 .player-paper {
     border-radius: 1em;
-    border: 0.1em solid #d1d5db;
+    border: 0.1em solid var(--white);
     padding: 1em;
     display: flex;
     flex-direction: column;
 }
 
 .player-paper-self {
-    font-size: 1.25rem;
+    font-size: 1rem;
 }
 
 .player-paper-enemy {
-    font-size: 0.5rem;
+    font-size: 0.4rem;
     transform-style: preserve-3d;
+    transition: transform 0.6s;
+    position: relative;
+    /* Needed for pseudo-element */
+    overflow: hidden;
+    z-index: 0;
 }
 
+/* Sheen effect — initially hidden */
+.player-paper-enemy::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(120deg,
+            rgba(143, 201, 203, 0) 0%,
+            rgba(143, 201, 203, 0.5) 50%,
+            rgba(143, 201, 203, 0) 100%);
+    transform: translateX(-100%);
+    opacity: 0;
+    pointer-events: none;
+    transition: transform 0.6s ease, opacity 0.3s ease;
+    z-index: 1;
+    mix-blend-mode: screen;
+}
 
+/* Optional: elevate content above sheen */
+.player-paper-enemy>* {
+    position: relative;
+    z-index: 2;
+}
+
+/* On hover: rotate and show sheen */
 .player-paper-enemy:hover {
     transform: rotateY(25deg) rotateX(10deg);
 }
+
+.player-paper-enemy:hover::before {
+    transform: translateX(100%);
+    opacity: 1;
+}
+
+
 
 
 
@@ -36,7 +74,7 @@
 }
 
 .player-paper-rows {
-    border: 0.1em solid #d1d5db;
+    border: 0.1em solid var(--white);
     border-radius: 1em;
     overflow: hidden;
 }
@@ -56,7 +94,6 @@
     justify-content: center;
     font-size: 2em;
     font-weight: bold;
-    color: white;
     position: relative;
 
 }
@@ -67,72 +104,76 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    color: black;
+    color: var(--black);
     font-size: 2em;
     font-weight: normal;
     pointer-events: none;
 }
 
 .player-paper-bg-red {
-    background-color: #ef4444;
+    background-color: var(--red);
 }
 
 .player-paper-bg-yellow {
-    background-color: #eab308;
+    background-color: var(--yellow);
 }
 
 .player-paper-bg-green {
-    background-color: #22c55e;
+    background-color: var(--green);
 }
 
 .player-paper-bg-blue {
-    background-color: #3b82f6;
+    background-color: var(--blue);
 }
 
-.player-paper-bg-red-lock {
-    background-color: #b91c1c;
+
+
+.player-paper-bg-red-canlock {
+    background-color: color-mix(in srgb, var(--red), black 30%);
 }
 
-.player-paper-bg-yellow-lock {
-    background-color: #a16207;
+
+.player-paper-bg-yellow-canlock {
+    background-color: color-mix(in srgb, var(--yellow), black 30%);
 }
 
-.player-paper-bg-green-lock {
-    background-color: #15803d;
+.player-paper-bg-green-canlock {
+    background-color: color-mix(in srgb, var(--green), black 30%);
 }
 
-.player-paper-bg-blue-lock {
-    background-color: #1e40af;
+.player-paper-bg-blue-canlock {
+    background-color: color-mix(in srgb, var(--blue), black 30%);
 }
 
 .player-paper-border-red {
-    border: 0.1em solid #ef4444;
+    border: 0.1em solid var(--red);
 }
 
 .player-paper-border-yellow {
-    border: 0.1em solid #eab308;
+    border: 0.1em solid var(--yellow);
 }
 
 .player-paper-border-green {
-    border: 0.1em solid #22c55e;
+    border: 0.1em solid var(--green);
 }
 
 .player-paper-border-blue {
-    border: 0.1em solid #3b82f6;
+    border: 0.1em solid var(--blue);
 }
 
 .player-paper-border-miss {
-    border: 0.1em solid #0c0c0c;
+    border: 0.1em solid var(--black);
 }
 
 .player-paper-border-score {
-    border: 0.1em solid #d1d5db;
+    border: 0.1em solid var(--white);
 }
+
+.player-paper-lock {}
 
 .player-paper-score-miss-container {
     display: flex;
     justify-content: space-between;
-
     padding-top: 1em;
 }
 
@@ -140,7 +181,6 @@
     display: flex;
     align-items: center;
     font-weight: bold;
-    color: white;
 }
 
 .player-paper-miss-cell {
@@ -151,7 +191,6 @@
     justify-content: center;
     font-size: 2em;
     font-weight: bold;
-    color: white;
     position: relative;
     border-radius: 0.5em;
     margin-left: 0.2em;
@@ -162,7 +201,6 @@
     align-items: center;
     font-weight: bold;
     font-size: 2em;
-    color: white;
 }
 
 .player-paper-score-cell {
@@ -173,7 +211,6 @@
     justify-content: center;
     font-size: 1em;
     font-weight: bold;
-    color: white;
     position: relative;
     border-radius: 0.5em;
 }
