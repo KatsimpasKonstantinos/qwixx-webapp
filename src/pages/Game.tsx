@@ -1,10 +1,12 @@
 import './Game.css'
-import PlayerPaper from '../components/PlayerPaper'
 import { createDefaultPaper } from '../game/create-papers/default'
 import { gameBaseModes } from '../game/game-base-modes'
 import type { GameSettings } from '../types/game'
 import type { Player } from '../types/player'
 import Leaderboard from '../components/Leaderboard'
+import DefaultPaper from '../components/papers/DefaultPaper'
+import DefaultScorerRules from '../components/scorer-rules/DefaultScorerRules'
+import Avatar from '../components/Avatar'
 
 function Game() {
 
@@ -19,9 +21,20 @@ function Game() {
         };
 
         const crossedAmount = Math.floor(Math.random() * (rowsAmount * columnsAmount));
+        //const crossedAmount = 0;
 
         for (let x = 0; x < crossedAmount; x++) {
             player.paper.rows[Math.floor(Math.random() * rowsAmount)].cells[Math.floor(Math.random() * columnsAmount)].crossed = true;
+        }
+
+        for (let row of player.paper.rows) {
+            if (Math.random() < 0.3) {
+                row.locked = true;
+                row.lockTicked = true;
+            } else {
+                row.locked = false;
+                row.lockTicked = false;
+            }
         }
 
         player.paper.misses = Math.floor(Math.random() * 5);
@@ -38,13 +51,18 @@ function Game() {
         scoreHint: false
     }
 
+    let mainPlayer = randomPlayer();
+
     return (
         <div className="Game">
             <div className='game-scorer-rules'>
-
+                <DefaultScorerRules player={mainPlayer} gameSettings={testGameSettings} />
+            </div>
+            <div className='game-avatar'>
+                <Avatar />
             </div>
             <div className='game-board'>
-                <PlayerPaper player={randomPlayer()} gameSettings={testGameSettings} self={true} />
+                <DefaultPaper player={mainPlayer} gameSettings={testGameSettings} self={true} />
             </div>
             <div className='game-leaderboard'>
                 <Leaderboard players={[randomPlayer(), randomPlayer(), randomPlayer(), randomPlayer(), randomPlayer(), randomPlayer(), randomPlayer()]} gameSettings={testGameSettings} />

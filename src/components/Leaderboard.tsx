@@ -1,7 +1,7 @@
 import './Leaderboard.css'
 import type { GameSettings } from "../types/game";
 import type { Player } from "../types/player";
-import PlayerPaper from "./PlayerPaper";
+import DefaultPaper from './papers/DefaultPaper';
 
 function Leaderboard({ players, gameSettings }: { players: Player[], gameSettings: GameSettings }) {
 
@@ -9,7 +9,7 @@ function Leaderboard({ players, gameSettings }: { players: Player[], gameSetting
         <div className="Leaderboard">
             {players.map(player => (
                 <div className='leaderboard-player-paper'>
-                    <PlayerPaper player={player} gameSettings={gameSettings} self={false} />
+                    <DefaultPaper player={player} gameSettings={gameSettings} self={false} />
                 </div>
             ))}
         </div>

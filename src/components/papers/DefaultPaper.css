@@ -1,0 +1,163 @@
+.default-paper-container {
+    perspective: 1000px;
+}
+
+.default-paper {
+    border-radius: 1em;
+    border: 0.1em solid var(--white);
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+}
+
+.default-paper-self {}
+
+.default-paper-enemy-overlay {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: antiquewhite;
+    mix-blend-mode: multiply;
+}
+
+.default-paper-enemy {
+    transform-style: preserve-3d;
+    position: relative;
+    overflow: hidden;
+    z-index: 0;
+    transition: transform 0.6s ease, opacity 0.3s ease;
+}
+
+.default-paper-enemy::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(120deg,
+            rgba(143, 201, 203, 0) 0%,
+            rgba(143, 201, 203, 0.5) 50%,
+            rgba(143, 201, 203, 0) 100%);
+    transform: translateX(-100%);
+    opacity: 0;
+    pointer-events: none;
+    z-index: 1;
+    mix-blend-mode: screen;
+}
+
+.default-paper-enemy:hover {
+    transform: rotateY(25deg) rotateX(10deg);
+}
+
+.default-paper-enemy:hover::before {
+    transform: translateX(100%);
+    opacity: 1;
+}
+
+
+
+.default-paper-player-name {
+    font-size: 2em;
+    font-weight: 600;
+    display: block;
+    margin-bottom: 0.5em;
+}
+
+.default-paper-rows {
+    border: 0.1em solid var(--white);
+    border-radius: 1em;
+    overflow: hidden;
+}
+
+.default-paper-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.default-paper-cell {
+    width: 2em;
+    height: 2em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2em;
+    font-weight: bold;
+    position: relative;
+}
+
+.default-paper-cell-cross {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--black);
+    font-size: 2em;
+    font-weight: normal;
+    pointer-events: none;
+}
+
+.default-paper-bg {
+    background-color: var(--color);
+}
+
+.default-paper-bg.locked {
+    background-color: color-mix(in srgb, var(--color), rgba(0, 0, 0, 0) 90%);
+}
+
+.default-paper-bg.canlock {
+    background-color: color-mix(in srgb, var(--color), black 30%);
+}
+
+.default-paper-border {
+    border: 0.1em solid var(--border-color, currentColor);
+}
+
+
+.default-paper-score-miss-container {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 1em;
+}
+
+.default-paper-misses {
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+}
+
+.default-paper-miss-cell {
+    width: 2em;
+    height: 2em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2em;
+    font-weight: bold;
+    position: relative;
+    border-radius: 0.5em;
+    margin-left: 0.2em;
+}
+
+.default-paper-score {
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    font-size: 2em;
+}
+
+.default-paper-score-cell {
+    width: 2em;
+    height: 2em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1em;
+    font-weight: bold;
+    position: relative;
+    border-radius: 0.5em;
+}
