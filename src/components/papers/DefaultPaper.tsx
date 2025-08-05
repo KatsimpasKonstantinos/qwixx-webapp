@@ -10,11 +10,19 @@ function DefaultPaper({ player, gameSettings, self }: { player: Player, gameSett
             <div key={index} className="default-paper-row">
                 {row.cells.map((cell, cellIndex) => {
                     const colorVar = `var(--${cell.color})`;
+
+                    let hasCrossedRight = false
+                    for (let ci = cellIndex; ci < row.cells.length; ci++) {
+                        if (row.cells[ci].crossed) hasCrossedRight = true;
+                    }
+
                     const stateClass = row.locked
                         ? "locked"
                         : cell.canLockRow
                             ? "canlock"
-                            : "";
+                            : hasCrossedRight
+                                ? "rightCrossed"
+                                : "";
 
                     return (
                         <span

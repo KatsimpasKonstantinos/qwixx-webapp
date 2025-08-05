@@ -1,0 +1,127 @@
+.dices {
+    display: flex;
+    flex-direction: row;
+}
+
+.dices-dot {
+    display: block;
+    width: 1.5em;
+    height: 1.5em;
+    border-radius: 50%;
+    background-color: var(--white);
+}
+
+.dices-dot-white {
+    display: block;
+    width: 1.5em;
+    height: 1.5em;
+    border-radius: 50%;
+    background-color: var(--black);
+}
+
+.dices-dice {
+    margin: 0.7em;
+    padding: 0.7em;
+    background-color: var(--color);
+    width: 7em;
+    height: 7em;
+    border-radius: 10%;
+}
+
+.dices-dice.transparent {
+    background-color: color-mix(in srgb, var(--color), transparent 75%);
+}
+
+.dices-dice:hover {
+    transform: translateY(-1em) scale(1.1);
+}
+
+.dices-dice.transparent:hover {
+    transform: none;
+}
+
+.dices-dice.selected {
+    animation: subtleBounce 1.2s ease-in-out infinite;
+}
+
+
+@keyframes subtleBounce {
+
+    0%,
+    100% {
+        transform: translateY(-1em);
+        scale: 1;
+    }
+
+    50% {
+        transform: translateY(0);
+        scale: 1;
+
+    }
+}
+
+.dices-1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dices-2 {
+    display: flex;
+    justify-content: space-between;
+}
+
+.dices-2 .dices-dot:nth-of-type(2) {
+    align-self: flex-end;
+}
+
+.dices-3 {
+    display: flex;
+    justify-content: space-between;
+}
+
+.dices-3 .dices-dot:nth-of-type(2) {
+    align-self: center;
+}
+
+.dices-3 .dices-dot:nth-of-type(3) {
+    align-self: flex-end;
+}
+
+
+.dices-4 {
+    display: flex;
+    justify-content: space-between;
+}
+
+.dices-4 .dices-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.dices-5 {
+    display: flex;
+    justify-content: space-between;
+}
+
+.dices-5 .dices-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.dices-5 .dices-column:nth-of-type(2) {
+    justify-content: center;
+}
+
+.dices-6 {
+    display: flex;
+    justify-content: space-between;
+}
+
+.dices-6 .dices-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}

@@ -35,5 +35,5 @@ body {
 *,
 *::before,
 *::after {
-  transition-duration: 0.4s !important;
+  transition-duration: 0.3s !important;
 }

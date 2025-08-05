@@ -106,11 +106,15 @@
 }
 
 .default-paper-bg.locked {
-    background-color: color-mix(in srgb, var(--color), rgba(0, 0, 0, 0) 90%);
+    background-color: color-mix(in srgb, var(--color), rgba(0, 0, 0, 0) 92%);
 }
 
 .default-paper-bg.canlock {
     background-color: color-mix(in srgb, var(--color), black 30%);
+}
+
+.default-paper-bg.rightCrossed {
+    background-color: color-mix(in srgb, var(--color), black 50%);
 }
 
 .default-paper-border {

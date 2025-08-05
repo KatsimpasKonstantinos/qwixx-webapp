@@ -1,4 +1,3 @@
-import type { GameSettings } from "./game";
 import type { Move } from "./move";
 import type { Paper } from "./paper";
 import type { Row } from "./row";

@@ -25,7 +25,6 @@ function DefaultScorerRules({ player, gameSettings }: { player: Player, gameSett
                 }
             }
             const color = `linear-gradient(140deg, ${colors.map(c => `var(--${c})`).join(", ")})`;
-            console.log(color);
             out.push(
                 <div className="default-scorer-rules-cell default-scorer-rules-bg" style={{ "--color": `${color}` }} key={crossedAmount}>
                     <div className="default-scorer-rules-crossed">

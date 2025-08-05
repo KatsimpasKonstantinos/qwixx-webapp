@@ -4,7 +4,7 @@ import type { Row } from "../../types/row";
 
 export function createDefaultPaper(): Paper {
     const rowsAmount = 4;
-    const columnsAmount = 12;
+    const columnsAmount = 11;
 
     let paper: Paper = {
         misses: 0,
@@ -21,7 +21,7 @@ export function createDefaultPaper(): Paper {
         }
         for (let c = 0; c < columnsAmount; c++) {
             let cell: Cell = {
-                number: c + 1,
+                number: r <= 1 ? c + 2 : columnsAmount - c + 1,
                 crossed: false,
                 color: r === 0 ? "red" : r === 1 ? "yellow" : r === 2 ? "green" : "blue",
                 canLockRow: c === columnsAmount - 1
