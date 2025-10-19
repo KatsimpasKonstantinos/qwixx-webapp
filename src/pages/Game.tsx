@@ -33,7 +33,7 @@ function Game() {
         for (let row of player.paper.rows) {
             if (Math.random() < 0.3) {
                 row.locked = true;
-                row.lockTicked = true;
+                row.lockTicked = Math.random() < 0.3;
             } else {
                 row.locked = false;
                 row.lockTicked = false;
