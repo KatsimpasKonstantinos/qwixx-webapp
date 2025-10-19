@@ -6,6 +6,7 @@ function Dices({ dices, myTurn }: { dices: Dice[], myTurn: boolean }) {
 
     const maxDiceSelected = 2;
     let diceSelected = 0;
+    let dicesSelected = [];
 
 
     function handleDiceClick(event) {
@@ -17,11 +18,11 @@ function Dices({ dices, myTurn }: { dices: Dice[], myTurn: boolean }) {
             diceSelected--
         } else {
             if (diceSelected < maxDiceSelected) {
+
                 el.classList.toggle("selected");
                 diceSelected++;
             }
         }
-        console.log(diceSelected)
     }
 
 
